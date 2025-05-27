@@ -11,7 +11,7 @@ GSAP, ScrollTrigger, Swiper ![JavaScript](https://img.shields.io/badge/-JavaScri
 ✅ Point
 ------------
 ✔ intro 구현  
-✔ intro skip 버튼 구현
+✔ intro skip 버튼 구현  
 ✔ MainSlide 
 
 -------------------------------------------------
@@ -59,7 +59,7 @@ GSAP, ScrollTrigger, Swiper ![JavaScript](https://img.shields.io/badge/-JavaScri
 > 그렇기에 이미지를 활용하여 intro를 제작하였습니다.
 
 
-
+-------------------------------------------------
 
 
 
@@ -86,14 +86,58 @@ GSAP, ScrollTrigger, Swiper ![JavaScript](https://img.shields.io/badge/-JavaScri
 >**skip버튼 구현**  
 >skipBtn과 intro로 변수를 저장해 두고 click했을 때 intro의 display가 none이 되도록 합니다. 또한 메인 슬라이드가 자동 재생이 시작되도록 합니다.
 
+-------------------------------------------------
 
 
+## MainSlider
 
 
+```
+const naviControl = document.querySelectorAll(".swiper-navi .swiper-pagination-switch");
 
+const mainSwiper = new Swiper(".main-swiper", {
+    speed: 1000,
+    loop: true,
+    effect: "fade",
+    
+    pagination: {
+        el: ".swiper-navi .swiper-pagination", 
+        type: "progressbar"
+    },
+    
+    on: {
+        init: function() {
+            naviControl.forEach(function(item, i) {
+                if (i == this.realIndex) {
+                    item.classList.add("active");
+                } else {
+                    item.classList.remove("active");
+                }
+            }, this);
+        },
+        slideChangeTransitionStart: function() {
+            naviControl.forEach(function(item, i) {
+                if (i == this.realIndex) {
+                    item.classList.add("active");
+                } else {
+                    item.classList.remove("active"); 
+                }
+            }, this);
+        }
+    }
+});
+```
 
+> 메인 슬라이더를 움직임을 구현하는데 사용한 스크립트입니다. 
 
-
+```
+naviControl.forEach(function(item, i) {
+    item.addEventListener("click", function() {
+        mainSwiper.slideToLoop(i); 
+    });
+});
+```
+> 클릭시 해당 슬라이더로 이동하게 하는 스크립트입니다. 
 
 
 
