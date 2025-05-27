@@ -8,3 +8,7 @@ GSAP, ScrollTrigger, Swiper ![JavaScript](https://img.shields.io/badge/-JavaScri
  >https://dp-git-main-yeongjis-projects.vercel.app/
 
 
+✅ Point
+✔ intro 구현
+✔ intro skip 버튼 구현
+✔ MainSlide 
