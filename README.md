@@ -52,10 +52,3 @@ GSAP, ScrollTrigger, Swiper ![JavaScript](https://img.shields.io/badge/-JavaScri
  <div class="skip-btn"><a href="">Skip</a></div>
 </div>
 
-
-
-
-
-
-
-![Image](https://github.com/user-attachments/assets/1791e929-8a8c-42c5-a332-d6acd6db8331)
